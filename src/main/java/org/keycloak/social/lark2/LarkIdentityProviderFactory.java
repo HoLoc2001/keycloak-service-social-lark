@@ -16,7 +16,7 @@ public class LarkIdentityProviderFactory extends AbstractIdentityProviderFactory
 
     @Override
     public String getName() {
-        return "飞书-触推";
+        return "larksuite";
     }
 
     @Override
