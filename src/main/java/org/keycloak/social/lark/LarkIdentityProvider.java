@@ -22,7 +22,7 @@ import java.util.Map;
 import java.util.UUID;
 
 public class LarkIdentityProvider extends AbstractOAuth2IdentityProvider<LarkIdentityProviderConfig> implements SocialIdentityProvider<LarkIdentityProviderConfig> {
-    public static final String APP_TOKEN_URL = "https://open.larksuite.cn/open-apis/auth/v3/app_access_token/internal/";
+    public static final String APP_TOKEN_URL = "https://open.larksuite.com/open-apis/auth/v3/app_access_token/internal/";
     public static final String OAUTH2_PARAMETER_CLIENT_ID = "app_id";
     public static final String OAUTH2_PARAMETER_CLIENT_SECRET = "app_secret";
     public static final String USER_ATTRIBUTE_PHONE_NUMBER = "phone_number";
@@ -31,9 +31,9 @@ public class LarkIdentityProvider extends AbstractOAuth2IdentityProvider<LarkIde
 
     public LarkIdentityProvider(KeycloakSession session, LarkIdentityProviderConfig config) {
         super(session, config);
-        config.setAuthorizationUrl("https://open.larksuite.cn/open-apis/authen/v1/authorize");
-        config.setTokenUrl("https://open.larksuite.cn/open-apis/authen/v1/oidc/access_token");
-        config.setUserInfoUrl("https://open.larksuite.cn/open-apis/authen/v1/user_info");
+        config.setAuthorizationUrl("https://open.larksuite.com/open-apis/authen/v1/authorize");
+        config.setTokenUrl("https://open.larksuite.com/open-apis/authen/v1/oidc/access_token");
+        config.setUserInfoUrl("https://open.larksuite.com/open-apis/authen/v1/user_info");
     }
 
     @Override
