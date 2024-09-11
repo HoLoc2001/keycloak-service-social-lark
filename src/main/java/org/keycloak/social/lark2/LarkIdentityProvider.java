@@ -124,7 +124,7 @@ public class LarkIdentityProvider extends AbstractOAuth2IdentityProvider<LarkIde
         JsonNode userInfo = profile.get("data");
         String unionId = getJsonProperty(userInfo, "union_id");
         String unionOrOpenID = unionId != null && !unionId.isEmpty() ? unionId : getJsonProperty(userInfo, "open_id");
-        logger.warn("Error response from apple: status=" + getConfig());
+        logger.warn("Error response from apple: status=" + unionOrOpenID);
         BrokeredIdentityContext user = new BrokeredIdentityContext(unionOrOpenID, getConfig());
         String name = getJsonProperty(userInfo, "name");
         String email = getJsonProperty(userInfo, "enterprise_email");
