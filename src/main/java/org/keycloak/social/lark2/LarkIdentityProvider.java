@@ -129,13 +129,14 @@ public class LarkIdentityProvider extends AbstractOAuth2IdentityProvider<LarkIde
 
         String name = getJsonProperty(userInfo, "name");
         String userId = getJsonProperty(userInfo, "user_id");
-        String email = userId + "@nvbplay.vn";
+        // String email = getJsonProperty(userInfo, "user_id");
+        String email = getJsonProperty(userInfo, "email");
         if (email == null || email.isEmpty()) {
             email = getJsonProperty(userInfo, "email");
         }
-        user.setUsername(userId);
+        user.setUsername(name);
         user.setBrokerUserId(getJsonProperty(userInfo, "user_id"));
-        user.setModelUsername(userId);
+        user.setModelUsername(name);
         user.setEmail(email);
         user.setUserAttribute(USER_ATTRIBUTE_PHONE_NUMBER, getJsonProperty(userInfo, "mobile"));
         if (name.length() > 1) {
